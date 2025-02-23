@@ -1,0 +1,31 @@
+{% include "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Sent</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/emailsent.css' %}">
+</head>
+<body>
+    <div class="email-sent-container">
+        <!-- Email Icon -->
+        <div class="icon-container">
+            <img src="{% static 'images/GP2MailIcon.png' %}" alt="Email Icon">
+        </div>
+        <!-- Email Sent Message -->
+        <h2>Email Sent</h2>
+        <!-- Success Message -->
+        <p>We have sent you an email at </p>
+        <p><strong>person3@gmail.com</strong> check your inbox.</p>
+        <!-- Resend or Change Email Links -->
+        <div class="links">
+            <h4>Did not receive email? <a href="{% url 'ForgotPassword' %}" class="ForgotPassword-link">Resend email</a></h4>
+            <br>
+            <h3>Wrong email address? <a href="{% url 'ForgotPassword' %}" class="ForgotPassword-link">Change email</a></h3>
+        </div>
+    </div>
+</body>
+</html>
+

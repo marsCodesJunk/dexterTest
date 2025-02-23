@@ -1,0 +1,118 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+          
+/* Background Ellipses */
+.ellipse1, .ellipse2 {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(300px);
+    z-index: -1;
+}
+
+/* First ellipse on the left corner */
+.ellipse1 {
+    background-color: #2C62E9;
+    width: 400px;
+    height: 400px;
+    left: 80%;
+    top: 60%;
+}
+
+/* Second ellipse on the right corner */
+.ellipse2 {
+    background-color: #00F0FF;
+    width: 300px;
+    height: 500px;
+    left: 8%;
+    bottom: 60%;
+}
+        </style>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Outfit' rel='stylesheet'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dexter</title>
+    <link rel="stylesheet" href="{% static 'css/webResults.css' %}">
+</head>
+
+<body>
+    {% block content %}
+    <header>
+        {% include "sidebar.html" %}
+    </header>
+
+    <main>
+        <div class="ellipse1"></div>
+        <div class="ellipse2"></div>
+      
+        <div class="container">
+            <h2>WEBSITE SCANNER</h2>
+            <p>Paste Your Link Here</p>
+
+            <form action="{% url 'webResult' %}" method="get">
+                <div class="input-group">
+                    <input type="url" name="website_url" placeholder="https://" required>
+                    <button type="submit" class="detect-btn">Detect</button>
+                </div>
+            </form>
+            
+            <div class="scanner">
+                <div class="options">
+                    <p>Detection options</p>
+                    <div class="option">
+                        <div class="text">
+                            <h3>Include all pages:</h3>
+                            <p>Monitor and identify AI-generated text throughout all the pages of your website.</p>
+                        </div>
+                        <label class="toggle">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <hr>
+                    <div class="option">
+                        <div class="text">
+                            <h3>Include number of pages:</h3>
+                            <p>Select the pages you want to scan based on the specified number.</p>
+                            <!-- Add class to make it easy to toggle -->
+                            <input type="number" min="1" value="1" class="number-input" style="display: none;">
+                        </div>
+                        <label class="toggle">
+                            <input type="checkbox" class="toggle-checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    {% endblock %}
+
+
+    <!-- JavaScript to toggle visibility -->
+    <script>
+        // Get the checkbox and the number input
+        const toggleCheckbox = document.querySelector('.toggle-checkbox');
+        const numberInput = document.querySelector('.number-input');
+
+        // Add an event listener to toggle the number input visibility
+        toggleCheckbox.addEventListener('change', function() {
+            if (this.checked) {
+                numberInput.style.display = 'block'; // Show the number input when checked
+            } else {
+                numberInput.style.display = 'none'; // Hide the number input when unchecked
+            }
+        });
+
+        // Initialize visibility based on the initial state of the checkbox
+        if (toggleCheckbox.checked) {
+            numberInput.style.display = 'block'; // Show it if initially checked
+        }
+    </script>
+</body>
+</html>

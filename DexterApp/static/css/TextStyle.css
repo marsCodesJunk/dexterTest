@@ -1,0 +1,689 @@
+
+/* Body Setup */
+body {
+    margin: 0;
+    font-family: 'outfit';
+    background-color: black; /* Black background */
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+    
+/* Background Ellipses */
+.ellipse1, .ellipse2 {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(300px);
+    z-index: -1;
+}
+
+/* First ellipse on the left corner */
+.ellipse1 {
+    background-color: #2C62E9;
+    width: 400px;
+    height: 400px;
+    left: 80%;
+    top: 60%;
+}
+
+/* Second ellipse on the right corner */
+.ellipse2 {
+    background-color: #00F0FF;
+    width: 300px;
+    height: 500px;
+    left: 8%;
+    bottom: 60%;
+}
+
+/* Content Styles */
+.container {
+    display: flex;
+    height: 100vh;
+    z-index: 1; /* Keep content in front of background */
+}
+
+.main-content {
+    flex: 1;
+    padding: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    font-size: 40px;
+    text-align: left;
+    color: #D9D9D9;
+    font-family: 'Outfit';
+    margin-left: -780px;
+    margin-bottom: 10px;
+}
+.navigation {
+    font-size: 20px;
+    flex-direction: row;
+    gap:10px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #D9D9D9;
+    font-family: 'Outfit';
+    margin-right: 800px;
+    margin-bottom: -40px;
+}
+.text-switch{
+    font-size: 15px;
+    color: #A1A1A1;
+    font-family: 'Outfit';
+    flex-direction: column;
+    margin-left: 880px;
+    position: relative;
+    top: -350px; 
+    display: block; /* Ensure the label behaves as a block */
+    margin-bottom: 30px; /* Add space between the labels */
+}
+
+.blue-box {
+    background: #17384A;
+    width: 75%;
+    height: 90%;
+    padding: 20px;
+    padding-bottom: 30px;
+    border-radius: 25px;
+    text-align: left;
+    margin-left: 100px;
+    margin-bottom: 10px;
+}
+
+.inner-box {
+    background: #30576C;
+    width: 712px;
+    height: 290px;
+    padding: 20px;
+    margin-right: 70px;
+    margin-top: 15px;
+    border-radius: 25px;
+    
+}
+
+.inner-box input {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.detect-button {
+    background: #1DC0F2;
+    font-family: 'Outfit';
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 900px;
+    border-radius:30px;
+    position: relative;
+    top: -100px; 
+    height:50px;
+    width:150px
+}
+
+.detect-button:hover {
+    background: #0056b3;
+}
+/* Switch Styles */
+.switch-container {
+display: flex;
+flex-direction: column; /* Stack the switches vertically */
+gap: 15px; /* Adds space between the switches */
+justify-content: center;
+margin-left: 1050px;
+position: relative;
+top: -450px; 
+}
+.text-container {
+flex-direction: row; /* Stack the switches vertically */
+}
+
+/* Styling for each switch */
+.switch {
+position: relative;
+display: inline-block;
+width: 60px; /* Width of the toggle */
+height: 34px; /* Height of the toggle */
+}
+
+/* Hide the default checkbox */
+.switch input {
+opacity: 0;
+width: 0;
+height: 0;
+}
+
+/* Slider inside the switch */
+.slider {
+position: absolute;
+cursor: pointer;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #ccc;
+transition: 0.4s;
+border-radius: 34px;
+}
+
+/* The circle inside the switch */
+.slider:before {
+position: absolute;
+content: "";
+height: 26px;
+width: 26px;
+border-radius: 50%;
+left: 4px;
+bottom: 4px;
+background-color: white;
+transition: 0.4s;
+}
+
+/* When the switch is checked (on) */
+input:checked + .slider {
+background-color: #1DC0F2; /* Green color when on */
+}
+
+/* Move the circle when the switch is on */
+input:checked + .slider:before {
+transform: translateX(26px); /* Move the circle to the right */
+}
+
+/* Round the slider for a more modern look */
+.slider.round {
+border-radius: 34px;
+}
+
+.slider.round:before {
+border-radius: 50%;
+}
+
+.textarea-container {
+    margin-top: -10px;
+}
+
+textarea {
+    width: 705px;
+    height: 290px;
+    border: 1px #30576C;
+    background-color: #30576C;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 18px;
+    resize: none;
+   
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #30576C;
+}
+/* Upload & Paste Button Styles */
+.upload-area{
+    font-size: 1.5rem;
+    color: #ffffff;
+    width: 220px;  /* Adjust width */
+    height: 50px; /* Adjust height */
+    border-radius: 50px;  /* Less rounded, more squared */
+    border: 10px solid transparent;
+    background: transparent;
+    cursor: pointer;
+    transition: border 0.3s ease, background-color 0.3s ease;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Stack the switches vertically */
+    display: flex;
+    flex-direction: row; 
+    margin-left: 850px;
+    position: relative;
+    top: -260px; 
+}
+
+.paste-button {
+    font-size: 1.5rem;
+    color: #ffffff;
+    width: 220px;  /* Adjust width */
+    height: 50px; /* Adjust height */
+    border-radius: 50px;  /* Less rounded, more squared */
+    border: 1px solid transparent;
+    background: transparent;
+    cursor: pointer;
+    transition: border 0.3s ease, background-color 0.3s ease;
+    display: flex;
+    flex-direction: column; /* Stack the switches vertically */
+    display: flex;
+    flex-direction: row; 
+    margin-left: 860px;
+    position: relative;
+    top: -220px;  
+}
+
+/* Gradient Border */
+.upload-area::before,
+.paste-button::before {
+    content: "";
+    position: absolute;
+    inset: -0.1em -6px;
+    border-radius: 45px;  /* Match the button’s border-radius */
+    padding: 6px;
+    background: linear-gradient(100deg, rgb(0, 221, 255), blue);
+    mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    mask-composite: exclude;
+    width: 100%;
+    height: 100%;
+}
+
+/* Hover Effect */
+.upload-area:hover,
+.paste-button:hover {
+    background-color: rgba(0, 212, 255, 0.1);
+}
+
+
+.upload-text, .paste-button {
+    font-size: 18px;
+    color: #A1A1A1;
+    font-family: 'Outfit';
+    display: block;
+    margin-bottom: 10px;
+}
+
+.upload-area {
+    cursor: pointer;
+}
+
+.paste-button {
+    color: #D9D9D9;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 10px;
+}
+
+.upload-area input[type="file"] {
+    position: absolute;
+    width: 20%;
+    height: 10%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+    
+}
+.upload-text{
+    font-family: 'Outfit';
+    font-size: 25px;
+    
+}
+
+.upload-area span {
+    color: #D9D9D9;
+    font: 'outfit';
+    margin-bottom:-10px;
+    padding:10px
+    
+}
+
+.upload-icons{
+    width: 40px;
+    height: 40px;
+    margin-left:10px;
+    color: #D9D9D9;
+    margin-bottom:-10px;
+}
+.paste-icons{
+    width: 40px;
+    height: 40px;
+    color: #D9D9D9;
+    
+}
+.paste-button {
+display: inline-block;
+background-color:  #17384A;
+color: #D9D9D9;
+border: none;
+border-radius: 10px;
+cursor: pointer;
+font-family: 'Outfit';
+font-size: 25px;
+}
+
+
+#pasteTextarea {
+    color: white; /* Text color */
+    background-color: transparent; 
+    padding: 10px;
+    font-size: 20px;
+}
+
+/* Ensure placeholder text remains visible */
+#pasteTextarea::placeholder {
+    color: rgba(255, 255, 255, 0.6); /* Light white for placeholder */
+}
+.word-counter {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: -120px;
+    color: red; /* Default color */
+}
+
+.word-counter.valid {
+    color: green; /* Change color to green when 100+ words */
+}
+/*The text result css*/
+
+.smallBox {
+    background-color: rgb(68, 93, 106);
+    height: 90px;
+    border-radius: 15px;
+    padding: 1rem;
+    max-width: 700px;
+    text-align: center;
+    margin-bottom: 2rem; /* Add space below scanner */
+}
+
+.scanner {
+    background: #17384A;
+    width: 75%;
+    height: 90%;
+    padding: 20px;
+    border-radius: 25px;
+    text-align: left;
+    margin-left: 100px;
+    margin-bottom: 10px;
+}
+
+.scanner h2 {
+    font-size: 1.8rem;
+    color: #00d4ff;
+    margin-bottom: 1rem;
+}
+
+.textAreaResult {
+    background: rgb(68, 93, 106);
+    margin-right: 100px;
+    width: 100%;
+    height: 120px;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 20px;
+    resize: none;
+    
+   
+}
+.scrollable-text {
+    margin-top: -10px;
+    max-height: 110px; 
+    overflow-y: auto;   /* Enables vertical scrolling */
+    background-color:  rgb(68, 93, 106);
+    white-space: pre-wrap; /* Ensures text wraps properly */
+}
+.optionsss{
+    padding: -80px;
+
+    margin-left: 78%;
+    margin-top: -350px;
+    display: flex;
+    align-items: center; /* Aligns the text and input vertically */
+}
+
+.optionss {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Aligns the text and input vertically */
+}
+
+.options .option {
+    display: flex;
+    align-items: flex-start; /* Align items at the top */
+    justify-content: space-between; /* Push the toggle to the far right */
+    margin-bottom: 1.5rem;
+}
+
+.options .text {
+    display: flex;
+    flex-direction: column; /* Stack the h3 and p vertically */
+    align-items: flex-start; /* Align text to the left */
+    width: 100%; /* Take up full width */
+}
+
+.options .text p {
+    font-weight: normal; /* This removes the bold styling */
+    color: #b0c4de; /* Optional: You can adjust the color to make the text lighter or more subtle */
+    font-size: 0.9rem;
+    margin: 0.3rem 0;
+}
+
+
+.options .toggle {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+}
+
+
+.options p {
+    font-size: 1.3rem;
+    align-items: left; /* Center items horizontally */
+    text-align:left;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    padding-bottom: 10px;
+
+}
+
+
+
+.options .toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.options .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #adadad;
+    transition: 0.4s;
+    border-radius: 36px;
+}
+
+.options .toggle input:checked + .slider {
+    background-color: #00d4ff;
+}
+
+.options .slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+.options .toggle input:checked + .slider:before {
+    transform: translateX(21px);
+}
+
+.options .text {
+    text-align: left;
+}
+
+.options .text h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #00d4ff;
+}
+
+.options .text p {
+    font-size: 0.9rem;
+    margin: 0.3rem 0;
+    color: #b0c4de;
+    
+}
+
+
+footer {
+    background-color: #14243c;
+    text-align: center;
+    padding: 1rem 0;
+    color: #b0c4de;
+    margin-top: 2rem;
+}
+
+
+.number-input {
+    width: 50px;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    margin-left: 10px;
+}
+
+
+/* Pie Chart Styling */
+.chart-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.pie-chart {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pie {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: conic-gradient(#FF5E5E var(--percentage, 50%), #2ECC71 0%);
+}
+
+.chart-label {
+    position: absolute;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+
+.legend p {
+    margin: 0px 10;
+    font-size: 16px;
+}
+
+.ai-color, .human-color {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.ai-color {
+    background-color: #FF5E5E;
+}
+
+.human-color {
+    background-color: #26be98;
+}
+
+.accuracy {
+    margin-left: -1085px;
+    margin-top: 340px;
+    display: flex;
+    align-items: center;
+
+    font-size: 16px;
+    color: #2ecc9a;
+    font-weight: bold;
+    gap: 10px;
+}
+
+.accuracy-score {
+    
+    color: #ffffff;
+}
+
+.fa-check-circle {
+    color: #26be98;
+    font-size: 20px;
+}
+
+
+.chart-container {
+    margin-top: -50px;
+    margin-left: -50px;
+    width: 250px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pie-chart {
+    position: flex;
+    width: 230px;
+    height: 300px;
+    border-radius: 50%;
+    background: conic-gradient(#26be84 0% 62%, #c43930 62% 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pie-chart .percentage {
+    position: absolute;
+    font-size: 20px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.ai-label {
+    left: 15px; /* Position on the left of the green section */
+    top: 45%;
+}
+
+.human-label {
+    right: 15px; /* Position on the right of the red section */
+    top: 45%;
+}
+
+.legend {
+    margin-top: 20px;
+    font-size: 18px;
+}

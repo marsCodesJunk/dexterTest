@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/setings.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Login.css' %}">
+    <link href='https://fonts.googleapis.com/css?family=Outfit' rel='stylesheet'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Settings</title>
+</head>
+<body>
+    {% include "sidebar.html" %}
+    <div class="ellipse1"></div>
+    <div class="ellipse2"></div>
+    <div class="container">
+      <h2>Account Settings:</h2>
+        <div class="input-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" value="person m" readonly />
+            <button type="submit" class="edit-btn" onclick="editField('name')">Edit</button>
+        </div>
+        <div class="input-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" value="person3@gmail.com" readonly />
+            <button type="submit" class="edit-btn" onclick="editField('email')">Edit</button>
+        </div>
+        <div class="input-group">
+            <label for="password">Password:</label>
+            <a href="{% url 'PassUpd' %}" class="updatepass-btn">Update Password</a>
+        </div>
+        <a href="{% url 'AccDel' %}" class="delete-btn" onclick="confirmDelete()">Delete Account</a>
+    </div>
+    <script src="{% static 'js/setings.js' %}"></script>
+</body>
+</html>

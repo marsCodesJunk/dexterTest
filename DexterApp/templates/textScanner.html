@@ -1,0 +1,127 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+          
+/* Background Ellipses */
+.ellipse1, .ellipse2 {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(300px);
+    z-index: -1;
+}
+
+/* First ellipse on the left corner */
+.ellipse1 {
+    background-color: #2C62E9;
+    width: 400px;
+    height: 400px;
+    left: 80%;
+    top: 60%;
+}
+
+/* Second ellipse on the right corner */
+.ellipse2 {
+    background-color: #00F0FF;
+    width: 300px;
+    height: 500px;
+    left: 8%;
+    bottom: 60%;
+}
+        </style>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Outfit' rel='stylesheet'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dexter</title>
+    <link rel="stylesheet" href="{% static 'css/textScanner.css' %}">
+</head>
+
+<body>
+
+
+    {% block content %}
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.4.2/mammoth.browser.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.4.2/mammoth.browser.min.js"></script>
+
+
+
+    <header>
+        {% include "sidebar.html" %}
+    </header>
+    <script src="{% static 'js/Text.js' %}"></script>
+    <main>
+        <div class="ellipse1"></div>
+        <div class="ellipse2"></div>
+      
+        <div class="container">
+            <h2>TEXT SCANNER</h2>
+           
+            
+            <div class="scanner">
+                <div class="inner-box">
+                    <!-- Paste Text Area -->
+            <form method="POST" action="{% url 'TextResult' %}">
+               {% csrf_token %}
+           <div class="textarea-container">
+               <textarea id="pasteTextarea" name="input_text" placeholder="To analyze text add at least 300 words"></textarea>
+           </div>
+            <!-- Upload Area -->
+            <div class="upload-area" id="uploadArea" ondrop="handleDrop(event)" ondragover="allowDrop(event)" onclick="document.getElementById('fileInput').click()">
+               <ion-icon class="upload-icons" name="cloud-upload"></ion-icon>
+               <span class="upload-text">Upload Doc</span>
+               <input type="file" id="fileInput" accept=".txt, .docx, .pdf">
+           </div>        
+           <div class="paste-area">
+               <button type="button" class="paste-button" onclick="pasteText()"> <ion-icon class="paste-icons" name="documents">
+            </ion-icon> Paste Text </button>
+              
+           </div>
+   
+                </div>
+            </div>
+               <a href="{% url 'TextResult' %}">
+        <button type="submit" class="detect-button" id="detectButton" disabled>Detect</button></form></a></li>
+
+            <div class="word-counter">
+                <span id="wordCount">0 </span> words counter
+                <p id="wordWarning" style="color: red; font-size: 14px; display: none;">
+                    You need at least 300 words to proceed.
+                </p>
+            </div>
+
+        </div>
+
+     
+    </main>
+    {% endblock %}
+
+
+    <!-- JavaScript to toggle visibility -->
+    <script>
+        // Get the checkbox and the number input
+        const toggleCheckbox = document.querySelector('.toggle-checkbox');
+        const numberInput = document.querySelector('.number-input');
+
+        // Add an event listener to toggle the number input visibility
+        toggleCheckbox.addEventListener('change', function() {
+            if (this.checked) {
+                numberInput.style.display = 'block'; // Show the number input when checked
+            } else {
+                numberInput.style.display = 'none'; // Hide the number input when unchecked
+            }
+        });
+
+        // Initialize visibility based on the initial state of the checkbox
+        if (toggleCheckbox.checked) {
+            numberInput.style.display = 'block'; // Show it if initially checked
+        }
+    </script>
+</body>
+</html>

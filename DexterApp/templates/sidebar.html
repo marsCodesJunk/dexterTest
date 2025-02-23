@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+ 
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/sidebar.css' %}">
+</head>
+
+<body>
+    <div class="sidebar">
+        <a href="{% url 'homepage' %}">
+            <h1 class="logo">Dexter.</h1>
+        </a>
+        <ul>
+            <a href="{% url 'textScanner' %}">
+            <li><button><ion-icon name="document-outline"></ion-icon></button></li></a>
+            <a style="text-decoration:none;" href="{% url 'website' %}">
+            <li><button><i class="fas fa-link" style="color: #ffffff;     font-size: 3rem;  /* Ensure icon doesn't overflow */
+                width:75%; 
+                height: 50%; "></i></button></li></a>
+            <li><button><ion-icon name="logo-chrome"></ion-icon></button></li>
+        </ul>
+    </div>
+
+
+    <header>
+        <div class="navbar">
+           
+            <nav> 
+            
+                <ul>
+                  
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'about' %}">About Us</a></li>
+                    <li><a href="{% url 'contact' %}">Contact Us</a></li>
+                    <a href="{% url 'Login' %}">
+                    <li><button class="login-button" id="loginButton">Login</button>
+                             <!-- <script src="{% static 'js/LoginButton.js' %}"></script> --></li></a>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+</body>
+</html>
+

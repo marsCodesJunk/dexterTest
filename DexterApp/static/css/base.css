@@ -1,0 +1,141 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #000000; /* Solid black background */
+    color: #ffffff;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Full viewport height */
+}
+
+
+header {
+    background-color: #000000;
+    padding: 1rem 2rem;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: fixed; /* Fix the header at the top */
+    top: 0; /* Position at the top */
+}
+
+header .logo {
+    font-size: 2rem;
+    color: #ffffff;
+    margin: 0;
+      font-weight:bolder;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #00d4ff;
+}
+
+
+/* Sidebar Styles */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 184px;
+    height: 100%;
+    background-color: #000000;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+    border-right: 2px solid rgba(255, 255, 255, 0.233); ;
+}
+
+.sidebar .logo {
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 2rem;
+    margin-top: 0rem;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+.sidebar ul li {
+    margin-bottom: 4rem;
+    width: 100%;
+    display: flex;  /* Ensure flex behavior */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+.sidebar ul li button {
+    font-size: 4rem;  /* Adjust font size */
+    color: #ffffff;
+    width: 100px;  /* Set width for the button */
+    height: 100px;  /* Set height for the button */
+    border-radius: 50%;  /* Ensures the button is circular */
+    border: 7px solid transparent;  /* Transparent border to hold the gradient */
+    background: transparent;  /* Transparent background inside */
+    cursor: pointer;
+    transition: border 0.3s ease;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar ul li button::before {
+    content: "";
+    position: absolute;
+    inset: -0.1em -6px;
+    border-radius: 50%; 
+    padding: 6px; 
+    background: linear-gradient(100deg, rgb(0, 221, 255), blue); 
+    mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    mask-composite: exclude; 
+    width: 100%; /* Ensures the gradient takes the full width */
+    height: 100%; /* Ensures the gradient takes the full height */
+}
+
+.sidebar ul li button:hover {
+    background-color: rgba(0, 212, 255, 0.1);  /* Optional hover effect to add a subtle background */
+}
+
+.sidebar ul li button ion-icon {
+    font-size: 2rem;  /* Ensure icon doesn't overflow */
+    width: 85%;  /* Adjust the width of the icon to fit inside */
+    height: 80%; /* Adjust the height of the icon to fit inside */
+    display: block;
+    margin: 0 auto; /* Center the icon */
+}
+
+html{
+    zoom:90%
+}
+
+.sidebar .logo, .logo {
+    font-family: 'Arial', sans-serif; /* Ensure the same font-family */
+    font-weight:bolder;
+}
+
+a {
+    text-decoration: none;
+}

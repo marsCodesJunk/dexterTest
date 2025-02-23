@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dexter Extension</title>
+</head>
+<body>
+    <h1>AI Text Detection</h1>
+    <form method="post">
+        {% csrf_token %}
+        <textarea name="text" rows="6" cols="60" placeholder="Enter text here..."></textarea><br><br>
+        <button type="submit">Detect</button>
+    </form>
+
+    {% if result %}
+        <h2>Detection Result:</h2>
+        <p><strong>Text:</strong> {{ result.text }}</p>
+        <p><strong>AI Generated:</strong> {{ result.ai_generated|default:"Pending" }}</p>
+        <p><strong>Confidence:</strong> {{ result.confidence|default:"Pending" }}</p>
+    {% endif %}
+</body>
+</html>

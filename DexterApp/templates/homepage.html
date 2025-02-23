@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    {% include "sidebar.html" %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/TextStyle.css' %}">
+    <link href='https://fonts.googleapis.com/css?family=Outfit' rel='stylesheet'>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI or Human?</title>
+    <style>
+        body {
+            
+            font-family: 'Outfit';
+            margin: 0;
+            padding: 0;
+            color: white;
+            text-align: center;
+            overflow: hidden; /* Prevent scrolling */
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 70vh;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #2ecbff;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+            max-width: 450px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+            color: #d1d1d1;
+        }
+
+        .tools {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="ellipse1"></div>
+    <div class="ellipse2"></div>
+    <div class="container">
+        <h1>AI or Human?</h1>
+        <p>
+            Our advanced system instantly detects and separates AI-generated text from human writing, 
+            ensuring your content remains authentic and secure.
+        </p>
+        <div class="tools">3 Tools. One platform.</div>
+
+        <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            <button type="submit">Logout</button>
+        </form>
+    </div>
+</body>
+</html>

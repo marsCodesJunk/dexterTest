@@ -1,0 +1,25 @@
+{% include "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>welcome</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/welcome.css' %}">
+</head>
+<body>
+    <div class="welcome-container">
+        <!-- Icon -->
+        <div class="icon-container">
+            <img src="{% static 'images/GP2WelcomeIcon.png' %}" alt="Welcome Icon">
+        </div>
+        <!-- Welcome Message -->
+        <h2>WELCOME!</h2>
+        <!-- Success Message -->
+        <p>You signed up successfully!</p>
+        <!-- Log In Button -->
+        <a href="{% url 'Login' %}" class="login-btn">Log In</a>
+    </div>
+</body>
+</html>

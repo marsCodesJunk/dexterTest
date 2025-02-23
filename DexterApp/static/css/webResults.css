@@ -1,0 +1,361 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'outfit';
+    background-color: #000000; /* Solid black background */
+    color: #ffffff;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Full viewport height */
+    overflow-x: hidden
+}
+
+
+
+.container {
+    display: flex;
+    flex-direction: column; /* Align items vertically */
+    justify-content: center; /* Center items vertically */
+    align-items: left; /* Center items horizontally */
+    text-align:left;
+    max-width: 1100px;
+    width: 90%;
+    margin: 0 auto; /* Horizontally center */
+    padding: 2rem; /* Add some space around */
+    padding-left: 15rem;
+
+
+}
+
+.container h2,
+.container p {
+    margin: 0; /* Removes all margin */
+    padding: 5px;
+ 
+}
+.container p {
+    padding-bottom: 15px;
+ 
+}
+
+.container h2 {
+    font-size: 30px;
+ 
+}
+
+
+.smallBox {
+  
+    max-height: 150px; /* Adjust the height as needed */
+    overflow-y: auto; /* Enables vertical scrolling */
+    background-color: rgb(68, 93, 106);;
+    border-radius: 15px;
+    padding: 1rem;
+    max-width: 700px;
+    height: 100%;
+    text-align: center;
+    margin-bottom: 3rem; /* Add space below scanner */
+}
+
+
+.scanner {
+    background-color: rgb(23, 56, 74);;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    max-width: 1000px;
+    width: 100hv;
+    text-align: center;
+    margin-bottom: 2rem; /* Add space below scanner */
+}
+
+.scanner h2 {
+    font-size: 1.8rem;
+    color: #00d4ff;
+    margin-bottom: 1rem;
+}
+
+.input-group {
+    gap: 5rem;
+    margin-bottom: 2rem;
+     
+}
+
+.input-group input {
+    padding: 0.8rem;
+    outline: none;
+    font-size: 1rem;
+    border: none;
+    border-radius: 50px;
+    width: 58rem;
+}
+
+.detect-btn {
+    padding: 0.8rem 2rem; /* Adjust padding to make the button more rounded */
+    background-color: #00d4ff;
+    color: white;
+    border: none;
+    border-radius: 50px; /* Increased border-radius for a more circular appearance */
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.detect-btn:hover {
+    background-color: #008db3;
+}
+
+.optionsss{
+    padding: -80px;
+
+    margin-left: 78%;
+    margin-top: -350px;
+    display: flex;
+    align-items: center; /* Aligns the text and input vertically */
+}
+
+.optionss {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Aligns the text and input vertically */
+}
+
+.options .option {
+    display: flex;
+    align-items: flex-start; /* Align items at the top */
+    justify-content: space-between; /* Push the toggle to the far right */
+    margin-bottom: 1.5rem;
+}
+
+.options .text {
+    display: flex;
+    flex-direction: column; /* Stack the h3 and p vertically */
+    align-items: flex-start; /* Align text to the left */
+    width: 100%; /* Take up full width */
+}
+
+.options .text p {
+    font-weight: normal; /* This removes the bold styling */
+    color: #b0c4de; /* Optional: You can adjust the color to make the text lighter or more subtle */
+    font-size: 0.9rem;
+    margin: 0.3rem 0;
+}
+
+
+.options .toggle {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+}
+
+
+.options p {
+    font-size: 1.3rem;
+    align-items: left; /* Center items horizontally */
+    text-align:left;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    padding-bottom: 10px;
+
+}
+
+
+
+.options .toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.options .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #adadad;
+    transition: 0.4s;
+    border-radius: 36px;
+}
+
+.options .toggle input:checked + .slider {
+    background-color: #00d4ff;
+}
+
+.options .slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+.options .toggle input:checked + .slider:before {
+    transform: translateX(21px);
+}
+
+.options .text {
+    text-align: left;
+}
+
+.options .text h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #00d4ff;
+}
+
+.options .text p {
+    font-size: 0.9rem;
+    margin: 0.3rem 0;
+    color: #b0c4de;
+    
+}
+
+
+
+footer {
+    background-color: #14243c;
+    text-align: center;
+    padding: 1rem 0;
+    color: #b0c4de;
+    margin-top: 2rem;
+}
+
+
+.number-input {
+    width: 50px;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    margin-left: 10px;
+}
+
+
+/* Pie Chart Styling */
+.chart-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.pie-chart {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pie {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: conic-gradient(#FF5E5E var(--percentage, 50%), #2ECC71 0%);
+}
+
+.chart-label {
+    position: absolute;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+
+.legend p {
+    margin: 0px 10;
+    font-size: 16px;
+}
+
+.ai-color, .human-color {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.ai-color {
+    background-color: #FF5E5E;
+}
+
+.human-color {
+    background-color: #26be98;
+}
+
+.accuracy {
+    margin-left: -1030px;
+    margin-top: 340px;
+    display: flex;
+    align-items: center;
+
+    font-size: 16px;
+    color: #2ecc9a;
+    font-weight: bold;
+    gap: 10px;
+}
+
+.accuracy-score {
+    
+    color: #ffffff;
+}
+
+.fa-check-circle {
+    color: #26be98;
+    font-size: 20px;
+}
+
+
+.chart-container {
+    width: 250px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pie-chart {
+    position: flex;
+    width: 180px;
+    height: 200px;
+    border-radius: 50%;
+    background: conic-gradient(#26be84 0% 62%, #c43930 62% 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pie-chart .percentage {
+    position: absolute;
+    font-size: 20px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.ai-label {
+    left: 15px; /* Position on the left of the green section */
+    top: 45%;
+}
+
+.human-label {
+    right: 15px; /* Position on the right of the red section */
+    top: 45%;
+}
+
+.legend {
+    margin-top: 20px;
+    font-size: 18px;
+}

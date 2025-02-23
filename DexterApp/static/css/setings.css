@@ -1,0 +1,121 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align items to the top */
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+/* Background Ellipses */
+.ellipse1, .ellipse2 {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(300px);
+    z-index: -1;
+}
+
+.ellipse1 {
+    background-color: #2C62E9;
+    width: 400px;
+    height: 400px;
+    left: 80%;
+    top: 60%;
+}
+
+.ellipse2 {
+    background-color: #00F0FF;
+    width: 300px;
+    height: 500px;
+    left: 8%;
+    bottom: 60%;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0);
+    padding: 50px;
+    border-radius: 8px;
+    width: 100%;
+    margin-top: 20px; /* Adjusted to bring the container closer to the top */
+    margin-bottom: 30px;
+    max-width: 500px;
+    text-align: left;
+    z-index: 1;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center; /* Center items vertically */
+    gap: 10px; /* Add space between elements */
+}
+
+.input-group label {
+    flex: 0 0 80px; /* Fixed width for labels */
+}
+
+.input-group input {
+    flex: 1; /* Take up remaining space */
+    padding: 11px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 15px;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+.edit-btn {
+    padding: 4px;
+    background-color: #656666;
+    color: white;
+    border: 2px solid #00d5ff00;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 14px;
+    width: 70px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.edit-btn:hover {
+    background-color: #008db3;
+}
+
+.updatepass-btn {
+    padding: 4px;
+    background-color: #656666;
+    color: white;
+    border: 2px solid #00d5ff00;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 14px;
+    width: 140px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.updatepass-btn:hover {
+    background-color: #008db3;
+}
+
+.delete-btn {
+    padding: 4px;
+    background-color: #e14f41;
+    color: white;
+    border: 2px solid #00d5ff00;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 14px;
+    width: 130px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.delete-btn:hover {
+    background-color: #eb695e;
+}

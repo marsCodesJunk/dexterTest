@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    {% include "sidebar.html" %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/TextStyle.css' %}">
+    <link href='https://fonts.googleapis.com/css?family=Outfit' rel='stylesheet'>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        body {
+            font-family: 'Outfit';
+            margin: 10;
+            padding: 10;
+            
+            color: white;
+            text-align: center;
+            overflow: hidden; /* Prevent scrolling */
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            margin-top: -80px; /* Lift the content up slightly */
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #2ecbff;
+            margin-bottom: 2rem;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 5rem;
+        }
+
+        .contact-item {
+            text-align: center;
+        }
+
+        .contact-item img {
+            width: 50px;
+            margin-bottom: 1rem;
+        }
+
+        .contact-item h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        .contact-item p {
+            font-size: 1.2rem;
+            color: #d1d1d1;
+        }
+
+        a {
+            color: #2ecbff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="ellipse1"></div>
+    <div class="ellipse2"></div>
+    <div class="container">
+        <h1>Contact Us</h1>
+        <div class="contact-info">
+            <div class="contact-item">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/email.png" alt="Email Icon">
+                <h2>Email</h2>
+                <p><a href="mailto:Dexter@gmail.com">Dexter@gmail.com</a></p>
+            </div>
+            <div class="contact-item">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/phone.png" alt="Phone Icon">
+                <h2>Phone</h2>
+                <p>+(966) 511111111</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

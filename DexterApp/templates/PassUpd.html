@@ -1,0 +1,42 @@
+{% include "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        .container {
+  width: 900px;
+}
+        </style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Password</title>
+     <!-- Load static files -->
+     {% load static %}
+      <!-- Link to CSS -->
+    <link rel="stylesheet" href="{% static 'css/Login.css' %}">
+    <!-- Link to Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+    <div class="container">
+           
+        <h2>Update Your Password</h2>
+        <form method="post">
+            {% csrf_token %}
+            <p>Type your current password</p>
+            <div class="input-group">
+                <input type="password" id="password" name="password" placeholder="Password" required>
+            </div>
+            <p class="ForgotPassword-link"><a href="{% url 'ForgotPassword' %}">Forgot your password?</a></p>
+            <p>Type your new password</p>
+            <div class="input-group">
+                <input type="password" id="password" name="password" placeholder="Password" required>
+            </div>
+            <a href="{% url 'setings' %}" class="login-btn"> Update</a>  
+            
+        
+    </div>
+</body>
+</html>
+

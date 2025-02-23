@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+    {% load static %}
+    {% include "sidebar.html" %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/TextStyle.css' %}">
+    <link href='https://fonts.googleapis.com/css?family=Outfit' rel='stylesheet'>
+
+
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>About Us</title>
+     <style>
+         body {
+    font-family: 'Outfit';
+    margin: 0;
+    padding: 0;
+    color: white;
+    text-align: center;
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #2ecbff;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+            max-width: 500px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+            color: #d1d1d1;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-top: 2rem;
+            color: white;
+        }
+     </style>
+ </head>
+ <body>
+    <div class="ellipse1"></div>
+    <div class="ellipse2"></div>
+
+     <div class="container">
+         <h1>About Us</h1>
+         <p>
+             Welcome to Dexter, where we prioritize authenticity in content creation. 
+             Our mission is to provide cutting-edge solutions for identifying AI-generated text, 
+             ensuring your work stays genuine and secure.
+         </p>
+         <h2>Who are we?</h2>
+         <p>
+             We are a team of passionate innovators dedicated to developing advanced AI detection 
+             systems dedicated to creating tools that distinguish between AI and human text.
+         </p>
+         <h2>What we do?</h2>
+         <p>
+             Our advanced system instantly detects AI-generated text from human writing. 
+             By leveraging sophisticated algorithms, we help you maintain the integrity of your content 
+             in an increasingly digital world.
+         </p>
+     </div>
+ </body>
+ </html>

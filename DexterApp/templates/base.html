@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <style>
+          
+        /* Background Ellipses */
+        .ellipse1, .ellipse2 {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(300px);
+            z-index: -1;
+        }
+        
+        /* First ellipse on the left corner */
+        .ellipse1 {
+            background-color: #2C62E9;
+            width: 400px;
+            height: 400px;
+            left: 80%;
+            top: 60%;
+        }
+        
+        /* Second ellipse on the right corner */
+        .ellipse2 {
+            background-color: #00F0FF;
+            width: 300px;
+            height: 500px;
+            left: 8%;
+            bottom: 60%;
+        }
+                </style>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+ 
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dexter | Website Scanner</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+
+<body>
+
+    <div class="ellipse1"></div>
+    <div class="ellipse2"></div>
+    
+    <div class="sidebar">
+        <a href="{% url 'homepage' %}">
+            <h1 class="logo">Dexter.</h1>
+        </a>
+    </div>
+
+
+</body>
+</html>

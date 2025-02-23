@@ -1,0 +1,122 @@
+{% extends "websiteScanner.html" %}
+{% block content %}
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <style>
+          
+        /* Background Ellipses */
+        .ellipse1, .ellipse2 {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(300px);
+            z-index: -1;
+        }
+        
+        /* First ellipse on the left corner */
+        .ellipse1 {
+            background-color: #2C62E9;
+            width: 400px;
+            height: 400px;
+            left: 80%;
+            top: 60%;
+        }
+        
+        /* Second ellipse on the right corner */
+        .ellipse2 {
+            background-color: #00F0FF;
+            width: 300px;
+            height: 500px;
+            left: 8%;
+            bottom: 60%;
+        }
+                </style>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Outfit' rel='stylesheet'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dexter</title>
+    <link rel="stylesheet" href="{% static 'css/webResults.css' %}">
+
+</head>
+
+<body>
+{% include "sidebar.html" %}
+    <div class="ellipse1"></div>
+    <div class="ellipse2"></div>
+  
+<main>
+
+    
+    <div class="container">
+        <h2>Website Scanner</h2>
+        <p>Paste Your Link Here</p>
+        <form action="{% url 'webResult' %}" method="get">
+            <div class="input-group">
+                <input type="url" name="website_url" placeholder="https://" required>
+                <button type="submit" class="detect-btn">Detect</button>
+            </div>
+        </form>
+   
+
+        <div class="scanner">   
+            
+            <div class="options">
+                
+                <div class="optionss">
+                    <p>Text</p>
+                    <p style="margin-left: 830px;">page:</p>
+                    <input type="number" min="1" value="1" class="number-input">
+                </div>
+
+                <div class="smallBox">
+                    <div class="text">
+                        <p>{{ text }}</p>
+                    </div>
+                </div>
+
+                <p>Analysis</p>
+                <div class="smallBox">
+                    
+                    <div class="option">
+                        <div class="text">
+                            <p>Analysis should be shown here.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pie Chart Section with Percentages on Each Side -->
+                <div class="optionsss">
+
+                <div class="chart-container">
+                    <div class="pie-chart">
+                        <div class="percentage ai-label">62%</div>
+                        <div class="percentage human-label">38%</div>
+                    </div>
+                    <div class="legend">
+                        <p><span class="ai-color"></span> AI Text: 62%</p>
+                        <p><span class="human-color"></span> Human Text: 38%</p>
+                    </div>
+                </div>
+
+                <div class="accuracy">
+
+                    <p class="accuracy-score">                     <i class="fa-solid fa-check-circle" style="    padding: 10px;;"></i>Accuracy: 99%</p>
+                </div>
+            </div>
+
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock %}
+
+</body>
+</html>
